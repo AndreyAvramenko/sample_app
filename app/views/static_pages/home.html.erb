@@ -1,32 +1,7 @@
 <% if signed_in? %>
-<div class="row">
-	<aside class="col-md-4">
-		<section>
-			<%= render 'shared/user_info' %>
-		</section>
-		<section>
-			<%= render 'shared/micropost_form' %>
-		</section>
-	</aside>
-	<div class="col-md-8">
-		<h3>Mecropost Feed</h3>
-		<%= render 'shared/feed'%>
-	</div>
-</div>
-
-
+	<%= render 'signed_home' %>
+	
 <% else %><%# provide(:title, 'Home') %>
-<div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
+	<%= render 'unsigned_home' %>
 
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
-
-<%= link_to image_tag("rails.svg", height: "46", width:"130", alt: "Rails" ), 'http://rubyonrails.org/' %> 
 <% end %>
